@@ -30,15 +30,15 @@ console.log("Today is : " + dayList[day]);
 //var timeBlockHour = $('col-1 hour')
 
 //$(document).ready(function () {
-   // saveBtn click listener 
-    //$(".saveBtn").on("click", function () {
-        // Get nearby values of the description in JQuery
-      //  var text = $(this).siblings(".description").val();
-       // var time = $(this).parent().attr("id");
+   //saveBtn.click listener 
+   $(".saveBtn").on("click", function () {
+      // Get nearby values of the description in JQuery
+       var text = $(this).siblings(".description").val();
+      var time = $(this).parent().attr("id");
 
     // Log user input into local storage //
-     //   localStorage.setItem(time, text);
-   // })
+       localStorage.setItem(time, text);
+   })
       
     //Retrieve the current time 
      var currentHour = moment().hour();
@@ -46,10 +46,10 @@ console.log("Today is : " + dayList[day]);
         
     // loop over time blocks
  // Audit each time block to display past, current and future timeblocks
-//var auditTime = function () {
+  //var auditTime = function () {
    //var currentTime = moment().format("HH:mm:ss");
-     //$("#currentDay").text(currentTime);
-     //console.log(currentTime)
+   //  $("#currentDay").text(currentTime);
+    // console.log(currentTime)
 
      function timeTracker() {
         //get current number of hours.
@@ -59,21 +59,21 @@ console.log("Today is : " + dayList[day]);
         console.log(currentTime)
 
         // loop over time blocks
-        $(".time-block").each(function () {
-            var blockTime = parseInt($(this).attr("id").split("hour")[1]);
-            var blockTime = parseInt($(this).attr("id").split("#hour8")[1]);
+       $(".time-block").each(function () {
+         var blockTime = parseInt($(this).attr("id").split("hour")[1]);
+        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
             // To check the time and add the classes for background indicators
-            if (blockTime < timeNow) {
-            $(document).ready(function () {
-            })
+       if (blockTime < timeNow) {
+           $(document).ready(function () {
+           })
          }
        })
     }
     var timeNow = moment().hour();
 
     $(".time-block").each(function () {
-        var blockTime = parseInt($(this).attr("id").split("#hour9")[1]);
+        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
         // To check the time and add the classes for background indicators
         if (blockTime < timeNow) {
@@ -95,7 +95,7 @@ console.log("Today is : " + dayList[day]);
      })
 
      $(".time-block").each(function () {
-        var blockTime = parseInt($(this).attr("id").split("#hour10")[1]);
+        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
         // To check the time and add the classes for background indicators
         if (blockTime < timeNow) {
@@ -117,7 +117,7 @@ console.log("Today is : " + dayList[day]);
      })
 
      $(".time-block").each(function () {
-        var blockTime = parseInt($(this).attr("id").split("#hour11")[1]);
+        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
         // To check the time and add the classes for background indicators
         if (blockTime < timeNow) {
@@ -139,7 +139,7 @@ console.log("Today is : " + dayList[day]);
      })
 
      $(".time-block").each(function () {
-        var blockTime = parseInt($(this).attr("id").split("#hour12")[1]);
+        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
         // To check the time and add the classes for background indicators
         if (blockTime < timeNow) {
@@ -161,7 +161,7 @@ console.log("Today is : " + dayList[day]);
      })
 
      $(".time-block").each(function () {
-        var blockTime = parseInt($(this).attr("id").split("#hour13")[1]);
+        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
         // To check the time and add the classes for background indicators
         if (blockTime < timeNow) {
@@ -183,7 +183,7 @@ console.log("Today is : " + dayList[day]);
      })
 
      $(".time-block").each(function () {
-        var blockTime = parseInt($(this).attr("id").split("#hour14")[1]);
+        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
         // To check the time and add the classes for background indicators
         if (blockTime < timeNow) {
@@ -205,7 +205,8 @@ console.log("Today is : " + dayList[day]);
      })
 
      $(".time-block").each(function () {
-        var blockTime = parseInt($(this).attr("id").split("#hour15")[1]);
+        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
+        
 
         // To check the time and add the classes for background indicators
         if (blockTime < timeNow) {
@@ -227,7 +228,7 @@ console.log("Today is : " + dayList[day]);
      })
 
      $(".time-block").each(function () {
-        var blockTime = parseInt($(this).attr("id").split("#hour16")[1]);
+        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
         // To check the time and add the classes for background indicators
         if (blockTime < timeNow) {
@@ -249,7 +250,7 @@ console.log("Today is : " + dayList[day]);
      })
 
      $(".time-block").each(function () {
-        var blockTime = parseInt($(this).attr("id").split("#hour17")[1]);
+        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
         // To check the time and add the classes for background indicators
         if (blockTime < timeNow) {
@@ -271,7 +272,7 @@ console.log("Today is : " + dayList[day]);
      })
 
      $(".time-block").each(function () {
-        var blockTime = parseInt($(this).attr("id").split("#hour18")[1]);
+        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
         // To check the time and add the classes for background indicators
         if (blockTime < timeNow) {
@@ -292,7 +293,7 @@ console.log("Today is : " + dayList[day]);
         }
      })
    
-// End Audit Timeblock
+// End Timeblock verification
 
     // Local Storage text retrieval
     $("#hour0800 .description").val(localStorage.getItem("hour0800"))
@@ -308,4 +309,5 @@ console.log("Today is : " + dayList[day]);
     $("#hour1800 .description").val(localStorage.getItem("hour1800"));
 
    // timeTracker();
-  
+    
+   
