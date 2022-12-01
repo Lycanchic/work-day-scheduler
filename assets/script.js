@@ -30,7 +30,7 @@ console.log("Today is : " + dayList[day]);
         
    
      function timeTracker() {
-        //get current number of hours.
+       
 
        //Retrieve the current time 
         var timeNow = moment().hour();
