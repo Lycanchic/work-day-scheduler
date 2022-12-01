@@ -27,155 +27,275 @@ console.log("Today is : " + dayList[day]);
    // moment().hour(1800).format('HHmm'),
 //]
 
-var timeBlockHour = $('col-1 hour')
+//var timeBlockHour = $('col-1 hour')
 
-$(document).ready(function () {
+//$(document).ready(function () {
    // saveBtn click listener 
-    $(".saveBtn").on("click", function () {
+    //$(".saveBtn").on("click", function () {
         // Get nearby values of the description in JQuery
-        var text = $(this).siblings(".description").val();
-        var time = $(this).parent().attr("id");
+      //  var text = $(this).siblings(".description").val();
+       // var time = $(this).parent().attr("id");
 
     // Log user input into local storage //
-        localStorage.setItem(time, text);
-    })
+     //   localStorage.setItem(time, text);
+   // })
       
     //Retrieve the current time 
-     //var currentHour = moment().hour();
-     //console.log(currentHour);
+     var currentHour = moment().hour();
+     console.log(currentHour);
         
     // loop over time blocks
  // Audit each time block to display past, current and future timeblocks
 //var auditTime = function () {
-   var currentTime = moment().format("HH:mm:ss");
-     $("#currentDay").text(currentTime);
-     console.log(currentTime)
+   //var currentTime = moment().format("HH:mm:ss");
+     //$("#currentDay").text(currentTime);
+     //console.log(currentTime)
 
-    // Verify time and set appropriate color
-    if (currentTime === hour0800) {
-        $("#time-block0800").addClass("present");
-    }
-    else if (currentTime > hour0800) {
-        $("#time-block0800").addClass("past");
-    }
-    else {
-        $("#time-block0800").addClass("future");
-    }
-    // Verify time and set appropriate color
-    if (currentTime === hour0900) {
-        $("#time-block0900").addClass("present");
-    }
-    else if (currentTime > hour0900) {
-        $("#time-block0900").addClass("past");
-    }
-    else {
-        $("#time-block0900").addClass("future");
-    }
+     function timeTracker() {
+        //get current number of hours.
 
-   // Verify time and set appropriate color
-    if ((currentTime === hour1000)) {
-        $("#timeblock1000").addClass("present");
-    }
-    else if (currentTime > hour1000) {
-        $("#timeblock10").addClass("past");
-    }
-    else {
-        $("#timeblock10").addClass("future");
-    }
+       //Retrieve the current time 
+        var timeNow = moment().hour();
+        console.log(currentTime)
 
-   // Verify time and set appropriate color
-    if (currentTime === hour1100) {
-        $("#timeblock11").addClass("present");
-    }
-    else if (currentTime > hour1100) {
-        $("#timeblock11").addClass("past");
-    }
-    else {
-        $("#timeblock11").addClass("future");
-    }
+        // loop over time blocks
+        $(".time-block").each(function () {
+            var blockTime = parseInt($(this).attr("id").split("hour")[1]);
+            var blockTime = parseInt($(this).attr("id").split("#hour8")[1]);
 
- // Verify time and set appropriate color
-    if (currentTime === hour1200) {
-        $("#timeblock12").addClass("present");
+            // To check the time and add the classes for background indicators
+            if (blockTime < timeNow) {
+            $(document).ready(function () {
+            })
+         }
+       })
     }
-    else if (currentTime > hour1200) {
-        $("#timeblock12").addClass("past");
-    }
-    else {
-        $("#timeblock12").addClass("future");
-    }
+    var timeNow = moment().hour();
 
-    // Verify time and set appropriate color
-    if (currentTime === hour1300) {
-        $("#timeblock13").addClass("present");
-    }
-    else if (currentTime > hour1300) {
-        $("#timeblock13").addClass("past");
-    }
-    else {
-        $("#timeblock13").addClass("future");
-    }
+    $(".time-block").each(function () {
+        var blockTime = parseInt($(this).attr("id").split("#hour9")[1]);
 
-// Verify time and set appropriate color
-    if (currentTime === hour1400) {
-        $("#timeblock14").addClass("present");
-    }
-    else if (currentTime > hour1400) {
-        $("#timeblock14").addClass("past");
-    }
-    else {
-        $("#timeblock14").addClass("future");
-    }
+        // To check the time and add the classes for background indicators
+        if (blockTime < timeNow) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        }
+        else if (blockTime === timeNow) {
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+            $(this).addClass("present");
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
 
-    // Verify time and set appropriate color
-    if (currentTime === hour1500) {
-        $("#timeblock15").addClass("present");
-    }
-    else if (currentTime > hour1500) {
-        $("#timeblock15").addClass("past");
-    }
-    else {
-        $("#timeblock15").addClass("future");
-    }
+        }
+     })
 
-    // Verify time and set appropriate color
-    if (currentTime === hour1600) {
-        $("#timeblock16").addClass("present");
-    }
-    else if (currentTime > hour1600) {
-        $("#timeblock16").addClass("past");
-    }
-    else {
-        $("#timeblock16").addClass("future");
-    }
+     $(".time-block").each(function () {
+        var blockTime = parseInt($(this).attr("id").split("#hour10")[1]);
 
-    // Verify time and set appropriate color
-    if (currentTime === hour1700) {
-        $("#row-time-block17").addClass("present");
-    }
-    else if (currentTime > hour1700) {
-        $("row-time-block17").addClass("past");
-    }
-    else {
-        $("row-time-block17").addClass("future");
+        // To check the time and add the classes for background indicators
+        if (blockTime < timeNow) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        }
+        else if (blockTime === timeNow) {
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+            $(this).addClass("present");
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
+
+        }
+     })
+
+     $(".time-block").each(function () {
+        var blockTime = parseInt($(this).attr("id").split("#hour11")[1]);
+
+        // To check the time and add the classes for background indicators
+        if (blockTime < timeNow) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        }
+        else if (blockTime === timeNow) {
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+            $(this).addClass("present");
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
+
+        }
+     })
+
+     $(".time-block").each(function () {
+        var blockTime = parseInt($(this).attr("id").split("#hour12")[1]);
+
+        // To check the time and add the classes for background indicators
+        if (blockTime < timeNow) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        }
+        else if (blockTime === timeNow) {
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+            $(this).addClass("present");
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
+
+        }
+     })
+
+     $(".time-block").each(function () {
+        var blockTime = parseInt($(this).attr("id").split("#hour13")[1]);
+
+        // To check the time and add the classes for background indicators
+        if (blockTime < timeNow) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        }
+        else if (blockTime === timeNow) {
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+            $(this).addClass("present");
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
+
+        }
+     })
+
+     $(".time-block").each(function () {
+        var blockTime = parseInt($(this).attr("id").split("#hour14")[1]);
+
+        // To check the time and add the classes for background indicators
+        if (blockTime < timeNow) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        }
+        else if (blockTime === timeNow) {
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+            $(this).addClass("present");
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
+
+        }
+     })
+
+     $(".time-block").each(function () {
+        var blockTime = parseInt($(this).attr("id").split("#hour15")[1]);
+
+        // To check the time and add the classes for background indicators
+        if (blockTime < timeNow) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        }
+        else if (blockTime === timeNow) {
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+            $(this).addClass("present");
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
+
+        }
+     })
+
+     $(".time-block").each(function () {
+        var blockTime = parseInt($(this).attr("id").split("#hour16")[1]);
+
+        // To check the time and add the classes for background indicators
+        if (blockTime < timeNow) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        }
+        else if (blockTime === timeNow) {
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+            $(this).addClass("present");
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
+
+        }
+     })
+
+     $(".time-block").each(function () {
+        var blockTime = parseInt($(this).attr("id").split("#hour17")[1]);
+
+        // To check the time and add the classes for background indicators
+        if (blockTime < timeNow) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        }
+        else if (blockTime === timeNow) {
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+            $(this).addClass("present");
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
+
+        }
+     })
+
+     $(".time-block").each(function () {
+        var blockTime = parseInt($(this).attr("id").split("#hour18")[1]);
+
+        // To check the time and add the classes for background indicators
+        if (blockTime < timeNow) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        }
+        else if (blockTime === timeNow) {
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+            $(this).addClass("present");
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
+
+        }
+     })
    
-        // Verify time and set appropriate color
-    if (currentTime === hour1800) {
-        $("#hour1800").addClass("present");
-    }
-    else if (currentTime > hour0900) {
-        $("#rowtimeblock1800").addClass("past");
-    }
-    else {
-        $("#rowtimeblock1800").addClass("future");
-    } 
-    };
-},
-
 // End Audit Timeblock
 
     // Local Storage text retrieval
-    $("#hour0800 .description").val(localStorage.getItem("hour0800")))
+    $("#hour0800 .description").val(localStorage.getItem("hour0800"))
     $("#hour0900 .description").val(localStorage.getItem("hour0900"));
     $("#hour1000 .description").val(localStorage.getItem("hour1000"));
     $("#hour1100 .description").val(localStorage.getItem("hour1100"));
